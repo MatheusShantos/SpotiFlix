@@ -18,7 +18,7 @@ public class BandaControle {
 
 	public void salvar(Bandas modelo) {
 
-		conect.conecxao();// conecta com o banco de dados
+		conect.conexao();// conecta com o banco de dados
 		try {
 			PreparedStatement pst = conect.conecta.prepareStatement("insert into bandas(nome, genero) values(?,?)");
 
@@ -32,11 +32,11 @@ public class BandaControle {
 			JOptionPane.showMessageDialog(null, "Erro ao inserir dados!\n" + ex);
 		}
 
-		conect.desconecxao();// desconecta com o banco de dados
+		conect.desconexao();// desconecta com o banco de dados
 	}
 
 	public List<Bandas> read(String desc) {
-		conect.conecxao();
+		conect.conexao();
 		ResultSet rs = null;
 		PreparedStatement stmt = null;
 
@@ -65,13 +65,13 @@ public class BandaControle {
 
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 		return bandas;
 
 	}
 
 	public List<Bandas> readAll() {
-		conect.conecxao();
+		conect.conexao();
 		ResultSet rs = null;
 		PreparedStatement stmt = null;
 
@@ -99,13 +99,13 @@ public class BandaControle {
 
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 		return bandas;
 
 	}
 
 	public void update(Bandas modelo) {
-		conect.conecxao();
+		conect.conexao();
 
 		try {
 			PreparedStatement stmt = conect.conecta
@@ -121,12 +121,12 @@ public class BandaControle {
 			JOptionPane.showMessageDialog(null, "Erro ao atualizar dados!\n" + ex.getMessage());
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 	}
 
 	public void delete(Bandas modelo) {
 
-		conect.conecxao();
+		conect.conexao();
 
 		PreparedStatement stmt = null;
 

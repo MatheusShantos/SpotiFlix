@@ -18,7 +18,7 @@ public class UsuarioControle {
 
 	public void salvar(Usuario modelo) {
 
-		conect.conecxao();// conecta com o banco de dados
+		conect.conexao();// conecta com o banco de dados
 		try {
 			PreparedStatement pst = conect.conecta.prepareStatement("insert into usuarios(nome, email, senha) values(?,?,?)");
 
@@ -33,11 +33,11 @@ public class UsuarioControle {
 			JOptionPane.showMessageDialog(null, "Erro ao inserir dados!\n" + ex);
 		}
 
-		conect.desconecxao();// desconecta com o banco de dados
+		conect.desconexao();// desconecta com o banco de dados
 	}
 
 	public List<Usuario> read(String desc) {
-		conect.conecxao();
+		conect.conexao();
 		ResultSet rs = null;
 		PreparedStatement stmt = null;
 
@@ -66,13 +66,13 @@ public class UsuarioControle {
 
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 		return usuarios;
 
 	}
 
 	public List<Usuario> readAll() {
-		conect.conecxao();
+		conect.conexao();
 		ResultSet rs = null;
 		PreparedStatement stmt = null;
 
@@ -100,13 +100,13 @@ public class UsuarioControle {
 
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 		return usuarios;
 
 	}
 
 	public void update(Usuario modelo) {
-		conect.conecxao();
+		conect.conexao();
 
 		try {
 			PreparedStatement stmt = conect.conecta
@@ -124,12 +124,12 @@ public class UsuarioControle {
 			JOptionPane.showMessageDialog(null, "Erro ao atualizar dados!\n" + ex.getMessage());
 		}
 
-		conect.desconecxao();
+		conect.desconexao();
 	}
 
 	public void delete(Usuario modelo) {
 
-		conect.conecxao();
+		conect.conexao();
 
 		PreparedStatement stmt = null;
 

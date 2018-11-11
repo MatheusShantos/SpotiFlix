@@ -18,7 +18,7 @@ public class Conexao {
     private String usuario = "postgres";//é o usuário do banco de dados
     private String senha = "Vingados7vezes";//é a senha do banco de dados
     
-    public void conecxao(){
+    public void conexao(){
         System.setProperty("jdbc.Driver", driver);//responsavel por setar a propriedade do driver de conecxao
         
         try {
@@ -30,7 +30,7 @@ public class Conexao {
         }
     }
     
-    public void desconecxao(){
+    public void desconexao(){
         try {
             conecta.close();//desconecta com o banco de dados com o banco de dados
             //JOptionPane.showMessageDialog(null,"Banco de dados foi desconectado com sucesso!");
@@ -38,5 +38,10 @@ public class Conexao {
             JOptionPane.showMessageDialog(null,"Não foi possível desconectar com o banco de dados!\n"+ex.getMessage());
         }
     }
+    
+    /*public static void main(String args[]) {
+    	Conexao c = new Conexao();
+    	c.conexao();
+    }*/
 
 }
